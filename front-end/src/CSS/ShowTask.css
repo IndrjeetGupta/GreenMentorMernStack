@@ -1,0 +1,22 @@
+.ptask{
+    gap: 5px;
+}
+
+.ptask> p {
+    font-size: 16px; 
+    line-height: .5; 
+    margin-bottom: 20px; 
+    color: #333; 
+    font-family: Arial, sans-serif; 
+    
+}
+
+.sbtn{
+    padding: 10px 40px 10px 40px;
+    margin-top: 5px;
+    border-radius: 10px;
+    background-color: green;
+    border: none;
+    margin-left: 10px;
+}
+
