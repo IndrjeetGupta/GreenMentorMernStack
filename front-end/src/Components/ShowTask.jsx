@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { deleteTaskData } from '../Redux/TaskReducer/action'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteTaskData, tokenrece } from '../Redux/TaskReducer/action'
 import Edit from '../Pages/Edit'
 import '../CSS/ShowTask.css'
 
@@ -10,13 +10,17 @@ function ShowTask({ title, description, _id }) {
     setEdit(!edit)
 
   }
+  const { token, isAuth, loading, error, success } = useSelector((store) => store.authReducer)
+    console.log(token)
+  
 
   const dispatch = useDispatch()
 
-  const handelDelete = (_id) => {
-    dispatch(deleteTaskData(_id))
+  const handelDelete = (_id, token) => {
+    dispatch(deleteTaskData(_id, token))
 
   }
+  
   return (
     <div>
 
@@ -29,7 +33,7 @@ function ShowTask({ title, description, _id }) {
 
       </div>}
       <button className='sbtn' onClick={editFun} >Edit </button>
-      <button className='sbtn' onClick={() => handelDelete(_id)}>Delete</button>
+      <button className='sbtn' onClick={() => handelDelete(_id,token)}>Delete</button>
 
 
     </div>

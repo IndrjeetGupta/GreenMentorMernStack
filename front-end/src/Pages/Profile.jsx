@@ -4,43 +4,54 @@ import '../CSS/Profile.css'
 import { getProfilekData } from '../Redux/ProfileRedux/action'
 
 function Profile() {
-  const {proData} = useSelector((store) => store.profileReducer)
-  console.log(proData)
+
+  const { proData } = useSelector((store) => store.profileReducer)
+
+  const {  isAuth, } = useSelector((store) => store.authReducer)
+  
+
+  const { success,loading } = useSelector((store) => store.tasksReducer)
+  console.log(success)
+
 
 
   const dispatch = useDispatch()
-  useEffect(() =>{
+  useEffect(() => {
     dispatch(getProfilekData())
 
-  },[])
+  }, [])
+
 
   return (
     <div>
-        <h1>Profile</h1>
-       
-    <table style={{textAlign: 'center', margin: "auto",}}>
+      <h1>Profile</h1>
+
+      <table style={{ textAlign: 'center', margin: "auto", }}>
         <thead>
-            <tr>
-                <th>Name</th>
-                <th>Email</th>
-               
-            </tr>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+
+          </tr>
         </thead>
         <tbody>
-          {
-            proData.map((e) =>(
+
+          {success ? "" :
+
+            proData.map((e) => (
               <tr key={e._id}>
-              <td>{e.name}</td>
-              <td>{e.email}</td>
-              
-          </tr>
+                <td>{e.name}</td>
+                <td>{e.email}</td>
+
+              </tr>
             ))
+            
           }
 
 
         </tbody>
-    </table>
-      
+      </table>
+
     </div>
   )
 }

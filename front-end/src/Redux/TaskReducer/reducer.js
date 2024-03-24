@@ -5,7 +5,7 @@ import { GET_TASK_FAILURE, GET_TASK_REQUEST, GET_TASK_SUCCESS } from "./actionTy
     tasks: [],
     loading: false,
     error: null,
-    success: false, 
+    success: true, 
   };
   
   // Reducer
@@ -27,7 +27,7 @@ import { GET_TASK_FAILURE, GET_TASK_REQUEST, GET_TASK_SUCCESS } from "./actionTy
           tasks: payload,
           loading: false,
           error : null,
-          success: true
+          success: false
         }
       }
   

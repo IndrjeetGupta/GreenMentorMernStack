@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { handelLogin, handelPostLogin } from '../Redux/AuthReducer/action';
+// import {  handelPostLogin } from '../Redux/TaskReducer/reducer'
 import '../CSS/Login.css'
+import { getTaskData, handelPostLogin } from '../Redux/AuthReducer/action';
 
 function Login() {
     const initiaValue = {
@@ -22,6 +23,7 @@ function Login() {
     const login = () => {
         dispatch(handelPostLogin(form))
 
+
     }
 
     return (
@@ -29,7 +31,7 @@ function Login() {
 
             <h1>Login</h1>
 
-            <input type="email" value={form.email} name='email' onChange={handelChange} required  placeholder='Enter Email'/>
+            <input type="email" value={form.email} name='email' onChange={handelChange} required placeholder='Enter Email' />
             <br />
             <input type="password" value={form.password} name='password' onChange={handelChange} placeholder='Enter Password'
                 required />

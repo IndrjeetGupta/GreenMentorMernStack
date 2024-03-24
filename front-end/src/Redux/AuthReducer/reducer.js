@@ -7,6 +7,7 @@ import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from "./actionTyp
     loading: false,
     error: null,
     success: false,
+   
   };
   
   // Reducer

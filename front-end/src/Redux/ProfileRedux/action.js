@@ -22,11 +22,12 @@ export const getProfilekData = () => async(dispatch) =>{
         }
 
         const responseData = await response.json();
-        console.log("Data:", responseData);
+        // console.log("Data:", responseData);
         dispatch(profileData(responseData))
         
     } catch (error) {
         console.error("Error:", error);
+        // alert("Login first")
        
     }
 }

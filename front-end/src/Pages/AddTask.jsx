@@ -14,14 +14,15 @@ function AddTask() {
         setForm({ ...form, [e.target.name]: e.target.value })
 
     }
-    // const { isResiter } = useSelector((store) => store.resiReducer)
-    // console.log(isResiter)
+
+    const { token, isAuth } = useSelector((store) => store.authReducer)
+    console.log(isAuth)
 
     const dispatch = useDispatch()
 
     const submit = () => {
-        dispatch(postTaskData(form))
-        
+        dispatch(postTaskData(form, token))
+
     }
 
     return (
@@ -30,8 +31,8 @@ function AddTask() {
                 <h1>Add Task</h1>
                 <input type="text" value={form.title} name='title' onChange={handelChange} required placeholder='Enter Title ' />
                 <br />
-                <input type="text" value={form.description} name='description' onChange={handelChange} placeholder='Enter description '
-                 required />
+                <input type="text" value={form.description} name='description' onChange={handelChange} placeholder='Enter Description '
+                    required />
                 <br />
                 <input className='btn' type="submit" />
             </form>
