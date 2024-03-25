@@ -1,4 +1,4 @@
-import { GET_TASK_FAILURE, GET_TASK_REQUEST, GET_TASK_SUCCESS } from "./actionType";
+import { GET_TASK_FAILURE, GET_TASK_REQUEST, GET_TASK_SUCCESS, LOGOUT } from "./actionType";
 
 // Initial State
   const initialState = {
@@ -40,6 +40,8 @@ import { GET_TASK_FAILURE, GET_TASK_REQUEST, GET_TASK_SUCCESS } from "./actionTy
           success: false
         }
       }
+
+
       default :
       return state
     }

@@ -10,12 +10,13 @@
     border-radius: 10px;
     
 }
-.btn{
-    padding: 10px 40px 10px 40px;
+.lbtn{
+    padding: 8px 100px 8px 100px;
     margin-top: 5px;
     border-radius: 10px;
     background-color: green;
     border: none;
+    margin-top: 5px;
 }
 h1 {
     color: #333; 

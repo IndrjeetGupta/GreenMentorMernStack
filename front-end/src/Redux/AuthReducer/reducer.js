@@ -6,7 +6,8 @@ import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from "./actionTyp
     isAuth: false,
     loading: false,
     error: null,
-    success: false,
+    success: true,
+    visu: true
    
   };
   
@@ -19,7 +20,7 @@ import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from "./actionTyp
           ...state,
           loading: true,
           error: null,
-          success: false
+          success: true
         }
   
       }
@@ -31,7 +32,7 @@ import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from "./actionTyp
           isAuth:true,
           loading: false,
           error: null,
-          success: true
+          success: false
         }
   
       }
@@ -48,7 +49,11 @@ import { LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT } from "./actionTyp
       }
   
       case LOGOUT :{
-        return initialState
+        return {
+          ...state,
+          isAuth: true,
+          visu: false
+        }
       }
       default :
       return state

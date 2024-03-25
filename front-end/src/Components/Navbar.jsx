@@ -1,14 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../CSS/Navbar.css'
+import { useSelector } from 'react-redux'
 
 function Navbar() {
+    const { token, isAuth, loading, error, success } = useSelector((store) => store.authReducer)
 
     const links = [
         { path: "/register", title: "Register" },
-        { path: "/login", title: "Login" },
-        { path: "/profile", title: "Profile" },
+        { path: "/login", title:  "Login/Logout"  },
         { path: "/", title: "Task" },
+        { path: "/profile", title: "Profile" },
         { path: "/addtask", title: "AddTask" },
 
     ]

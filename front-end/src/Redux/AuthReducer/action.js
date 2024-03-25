@@ -37,3 +37,17 @@ export const handelPostLogin = (data) => async (dispatch) => {
 
   }
 }
+
+// Log out
+
+const hadelLogut = () =>{
+  return{type: "LOGOUT",  }
+}
+export const logoutFun = () => (dispatch) => {
+
+  dispatch(hadelLogut())
+  localStorage.removeItem('token');
+  alert("Logout Successful")
+  
+  
+};

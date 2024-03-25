@@ -36,7 +36,7 @@ function Profile() {
         </thead>
         <tbody>
 
-          {success ? "" :
+          {isAuth ? "" :
 
             proData.map((e) => (
               <tr key={e._id}>

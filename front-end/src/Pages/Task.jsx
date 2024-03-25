@@ -5,23 +5,21 @@ import ShowTask from '../Components/ShowTask'
 
 function Task() {
 
-    const [mahadev, setMadev] = useState(false)
+    
     const { tasks, loading, error, success } = useSelector((store) => store.tasksReducer)
     // console.log(tasks)
 
     const { token, isAuth } = useSelector((store) => store.authReducer)
-    console.log(isAuth)
-
+    console.log(token)
 
     const dispatch = useDispatch()
 
     useEffect(() => {
-
         dispatch(getTaskData())
-        if (isAuth)
-        window.location.reload()
-        
-        
+        if (isAuth){
+            window.location.reload()
+        }
+
     }, [isAuth])
 
     
